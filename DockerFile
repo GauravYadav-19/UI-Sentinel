@@ -1,0 +1,20 @@
+# Use the Playwright Python image matching our dependency version
+FROM mcr.microsoft.com/playwright/python:v1.58.0-jammy
+
+# Set the working directory
+WORKDIR /app
+
+# Copy requirements first to leverage Docker layer caching
+COPY requirements.txt .
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application code (respects .dockerignore)
+COPY . .
+
+# Expose the port FastAPI runs on
+EXPOSE 8080
+
+# Run with uvicorn
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
