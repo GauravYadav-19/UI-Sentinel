@@ -106,4 +106,4 @@ Visit the dashboard at `http://localhost:3000` to initiate a sequence.
 - [ ] Headless background queues for CI/CD integration
 
 ---
-*Created by [Your Name](https://github.com/yourusername)*
+*Created by [Gaurav Yadav](https://github.com/GauravYadav-19)*
